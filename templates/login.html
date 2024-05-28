@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body{
+            background: rgb(34,60,117);
+            background: radial-gradient(circle, rgba(34,60,117,1) 17%, rgba(0,0,0,1) 100%);
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+        }
+        button{
+            width: 100px;
+            padding: 10px;
+            border-radius: 10px;
+            border:none;
+            outline: none;
+            margin-bottom: 10px;
+            margin-left: 20px;
+        }
+        a{
+            text-decoration: none;
+            color: #ffffff;         
+        }
+        .logo{
+            position: absolute;
+            top: 5%;
+            left: 5%;
+            width: 150px;
+        }
+        main{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+        main> center>p{
+            font-size: 1.5rem;
+        }
+        .title{
+           font-size: 2.5rem;
+           position: absolute;
+           top: 15%;
+           left:45%;
+           transform: translate(-15%,-50%);
+        }
+        .buttons{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .signup{
+            margin-top: 20px;
+            font-size: 1.2rem;
+        }
+        form{
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            flex-direction: column;
+        }
+        input{
+            width: 200px;
+            padding: 10px;
+            border-radius: 10px;
+            border:none;
+            outline: none;
+            margin-bottom: 10px;
+            margin-left: 20px;
+        }
+        #submit{
+            width:92%;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body text = "white" bgcolor = "#223C75">
+    <center><h1 class="title">Login Page</h1></center>
+    <img class="logo" src="http://localhost:8000/static/logo-no-background.png" alt="">
+    <main>
+        <center><form method="POST" action="">
+        {{ form.hidden_tag() }}
+        {{ form.username }}
+        {{ form.password }}
+        {{ form.submit }}
+    </form></center>
+    <center><a class="signup" href="{{ url_for('register') }}">Don't have an account? Sign Up</a></center>
+    </main>
+    
+
+</body>
+
+</html>

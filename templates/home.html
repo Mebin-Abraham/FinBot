@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        body{
+            background: rgb(34,60,117);
+            background: radial-gradient(circle, rgba(34,60,117,1) 17%, rgba(0,0,0,1) 100%);
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+        }
+        button{
+            width: 100px;
+            padding: 10px;
+            border-radius: 10px;
+            border:none;
+            outline: none;
+            margin-bottom: 10px;
+            margin-left: 20px;
+        }
+        a{
+            text-decoration: none;
+            color: #000000;
+        }
+        .logo{
+            position: absolute;
+            top: 5%;
+            left: 5%;
+            width: 150px;
+        }
+        main{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+        main> center>p{
+            font-size: 1.5rem;
+        }
+        .title{
+           font-size: 2.5rem;
+           position: absolute;
+           top: 15%;
+           left:43%;
+           transform: translate(-15%,-50%);
+        }
+        .buttons{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+
+<body text = "white" >
+    <center><h1 class="title">Welcome to Finbot</h1></center>
+    <img class="logo" src="http://localhost:8000/static/logo-no-background.png" alt="">
+    <main>
+        <center>
+        <p><h3> is an advanced financial advisor chatbot designed to assist users in making informed financial decisions. With its expertise in investment planning, budget savings, loan advice, and more, FinBot aims to empower individuals with personalized financial guidance.</h3></p>
+    </center>
+    <div class="buttons">
+        <center><button><a href="{{ url_for('login') }}">Login </a></button><br></center>
+        <center><button><a href="{{ url_for('register') }}">Register </a></button><br></center>
+    </div>
+    </main>
+    
+
+</body>
+
+</html>
